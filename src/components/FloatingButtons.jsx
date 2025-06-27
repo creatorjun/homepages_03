@@ -1,4 +1,5 @@
 import React from 'react';
+import './FloatingButtons.css';
 
 function FloatingButtons() {
   return (

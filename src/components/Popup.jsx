@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Popup.css';
 
 // 쿠키 관련 헬퍼 함수
 const getCookie = (name) => {

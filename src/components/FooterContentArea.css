@@ -1,0 +1,17 @@
+/* Footer Content Area */
+.footer-content-area {
+  background-color: #f4f4f4;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-info {
+  text-align: left;
+}

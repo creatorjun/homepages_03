@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -77,7 +78,6 @@ function Contact() {
             </div>
           </div>
           <div className="privacy-policy">
-            {/* 바로 이 div가 핵심입니다! 이 div로 감싸주세요. */}
             <div className="privacy-checkbox-container">
               <input type="checkbox" id="privacy-agree" checked={agree} onChange={(e) => setAgree(e.target.checked)} disabled={isSubmitting} />
               <label htmlFor="privacy-agree">개인정보 수집 및 이용 동의</label>
