@@ -3,8 +3,9 @@ footer {
   background-color: #333;
   color: #aaa;
   text-align: center;
-  padding: 30px;
   font-size: 0.9rem;
+  /* 데스크톱 환경을 위한 하단 여백 추가 */
+  padding: 30px 20px 80px;
 }
 
 footer p {
@@ -14,4 +15,12 @@ footer p {
 .copyright {
   margin-top: 20px;
   color: #777;
+}
+
+/* 모바일 환경을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  footer {
+    /* 모바일에서는 플로팅 버튼이 세로로 쌓여 높이가 더 높으므로, 여백을 더 많이 줍니다. */
+    padding-bottom: 140px;
+  }
 }

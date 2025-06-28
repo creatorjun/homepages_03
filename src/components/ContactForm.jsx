@@ -50,7 +50,7 @@ function ContactForm() {
 
     return (
         <section id="contact" className="content-section">
-            <h2>관심고객 등록</h2>
+            <h2>24시간 상담신청</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">성함</label>

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { Helmet } from 'react-helmet-async'; // 더 이상 필요 없으므로 이 줄을 삭제합니다.
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';

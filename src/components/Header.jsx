@@ -8,6 +8,11 @@ function Header() {
     setMenuOpen(!isMenuOpen);
   };
 
+  // 메뉴 항목 클릭 시 메뉴를 닫는 함수를 추가합니다.
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header>
       <div className="logo">
@@ -17,11 +22,12 @@ function Header() {
       </div>
       <nav className={isMenuOpen ? 'menu active' : 'menu'}>
         <ul>
-          <li><a href="#premium">프리미엄</a></li>
-          <li><a href="#location">입지환경</a></li>
-          <li><a href="#flats">세대안내</a></li>
-          <li><a href="#gallery">갤러리</a></li>
-          <li><a href="#contact">상담신청</a></li>
+          {/* 각 링크에 onClick={handleLinkClick} 를 추가합니다. */}
+          <li><a href="#premium" onClick={handleLinkClick}>프리미엄</a></li>
+          <li><a href="#location" onClick={handleLinkClick}>입지환경</a></li>
+          <li><a href="#flats" onClick={handleLinkClick}>세대안내</a></li>
+          <li><a href="#gallery" onClick={handleLinkClick}>갤러리</a></li>
+          <li><a href="#contact" onClick={handleLinkClick}>상담신청</a></li>
         </ul>
       </nav>
       <button className="menu-toggle" onClick={handleMenuToggle}>
