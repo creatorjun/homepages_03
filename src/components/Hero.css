@@ -1,14 +1,12 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   background: url("/images/main_desktop.webp") no-repeat center center/cover;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   text-align: left;
   color: white;
-  padding: 0 5%;
 }
 
 .hero-text {
@@ -19,6 +17,7 @@
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
+  padding-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -47,6 +46,20 @@
   .hero-section {
     background-image: url("/images/main_tab.webp");
   }
+
+  .hero-text h1 {
+    font-size: 3.8rem;
+  }
+  
+  .hero-text .sub-heading {
+    font-size: 1.5rem;
+    padding-top: 100px;
+  }
+
+  .hero-poll-image {
+    max-width: 200px;
+    left: 2%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -55,11 +68,12 @@
   }
 
   .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 3.6rem;
   }
   
   .hero-text .sub-heading {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding-top: 100px;
   }
 
   .hero-poll-image {
