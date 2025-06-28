@@ -1,6 +1,5 @@
-/* Contact Section */
 .contact {
-  background: #1a2a4d; /* Navy color */
+  background: #1a2a4d;
   color: white;
 }
 .contact-content {
@@ -48,25 +47,21 @@
   padding: 15px;
   border-radius: 5px;
 }
-
 .privacy-checkbox-container {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .privacy-details-toggle {
   margin-left: 10px;
-  color: #6caddf; /* Lighter blue for better visibility on navy */
+  color: #6caddf;
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.9em;
 }
-
 .privacy-details-toggle:hover {
   color: #a0c8e8;
 }
-
 .privacy-content {
   background-color: white;
   color: #333;
@@ -75,13 +70,12 @@
   font-size: 0.8rem;
   border-radius: 5px;
 }
-
 .submit-button {
   padding: 15px;
   font-size: 1.1rem;
   font-weight: bold;
-  background-color: #FFD700; /* Gold color */
-  color: #1a2a4d; /* Navy text */
+  background-color: #FFD700;
+  color: #1a2a4d;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -98,6 +92,35 @@
 .submit-message {
   margin-top: 15px;
   font-weight: bold;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.date-picker-input {
+  width: 100%;
+  padding: 15px 40px 15px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.date-picker-container {
+  position: relative;
+  width: 100%;
+}
+.date-picker-container::after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {

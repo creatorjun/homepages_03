@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker'; // DatePicker 임포트
+import 'react-datepicker/dist/react-datepicker.css'; // DatePicker 스타일 임포트
 import './Contact.css';
 
 function Contact() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [visitDate, setVisitDate] = useState(null); // 방문 희망일 상태 추가
   const [agree, setAgree] = useState(true);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,6 +23,11 @@ function Contact() {
       alert('연락처를 입력해주세요.');
       return;
     }
+    // 방문 희망일 유효성 검사 추가
+    if (!visitDate) {
+      alert('방문 희망일을 선택해주세요.');
+      return;
+    }
     if (!agree) {
       alert('개인정보 수집 및 이용에 동의해주세요.');
       return;
@@ -31,6 +39,8 @@ function Contact() {
     const formData = new FormData();
     formData.append('name', name);
     formData.append('phone', phone);
+    // 방문 희망일 데이터 추가
+    formData.append('visitDate', visitDate.toLocaleDateString('ko-KR'));
     
     const phpApiUrl = '/send_sms.php'; 
 
@@ -46,6 +56,7 @@ function Contact() {
         setSubmitMessage('상담신청이 성공적으로 접수되었습니다.');
         setName('');
         setPhone('');
+        setVisitDate(null); // 상태 초기화
         setAgree(false);
       } else {
         setSubmitMessage('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
@@ -75,6 +86,23 @@ function Contact() {
             <div className="form-group">
               <label htmlFor="phone">연락처</label>
               <input type="tel" id="phone" name="phone" placeholder="'-' 없이 숫자만 입력" value={phone} onChange={(e) => setPhone(e.target.value)} disabled={isSubmitting} />
+            </div>
+          </div>
+          {/* 방문 희망일 선택 필드 */}
+          <div className="form-group">
+            <label htmlFor="visitDate">방문 희망일</label>
+            {/* 아이콘을 위한 부모 필드 */}
+            <div className="date-picker-container">
+              <DatePicker
+                id="visitDate"
+                selected={visitDate}
+                onChange={(date) => setVisitDate(date)}
+                dateFormat="yyyy / MM / dd"
+                placeholderText="방문 희망일을 선택하세요"
+                className="date-picker-input"
+                disabled={isSubmitting}
+                autoComplete="off"
+              />
             </div>
           </div>
           <div className="privacy-policy">

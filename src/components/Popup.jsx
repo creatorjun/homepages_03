@@ -48,14 +48,16 @@ function Popup() {
   return (
     <div className="popup-overlay" onClick={handleOverlayClick}>
       <div className="popup">
-        <div className="popup-header">
-          <h2>방문예약 특별혜택</h2>
-          <button className="popup-close" onClick={handleClose}>&times;</button>
+        <button className="popup-close" onClick={handleClose}>&times;</button>
+        
+        <img src="/images/popup.webp" alt="팝업 안내" className="popup-image" />
+        
+        <div className="popup-action">
+          <a href="#contact" className="popup-button" onClick={handleClose}>
+            상담신청 바로가기
+          </a>
         </div>
-        <div className="popup-content">
-          <p>홈페이지를 통해 방문예약 후 계약하시는 고객님께는<br /><strong>특별한 혜택</strong>을 드립니다.</p>
-          <a href="#contact" className="popup-button" onClick={handleClose}>상담신청 바로가기</a>
-        </div>
+        
         <div className="popup-footer">
           <input 
             type="checkbox" 
