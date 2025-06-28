@@ -22,10 +22,9 @@ function Header() {
       </div>
       <nav className={isMenuOpen ? 'menu active' : 'menu'}>
         <ul>
-          {/* 각 링크에 onClick={handleLinkClick} 를 추가합니다. */}
           <li><a href="#premium" onClick={handleLinkClick}>프리미엄</a></li>
           <li><a href="#location" onClick={handleLinkClick}>입지환경</a></li>
-          <li><a href="#flats" onClick={handleLinkClick}>세대안내</a></li>
+          <li><a href="#flats" onClick={handleLinkClick}>타입안내</a></li>
           <li><a href="#gallery" onClick={handleLinkClick}>갤러리</a></li>
           <li><a href="#contact" onClick={handleLinkClick}>상담신청</a></li>
         </ul>
