@@ -17,7 +17,7 @@ function Header() {
     <header>
       <div className="logo">
         <a href="#">
-          <img src="/images/logo.webp" alt="(대표) 상도 힐스 더원 로고" />
+          <img src="images/logo.webp" alt="(대표) 상도 힐스 더원 로고" />
         </a>
       </div>
       <nav className={isMenuOpen ? 'menu active' : 'menu'}>

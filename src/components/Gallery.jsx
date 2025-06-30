@@ -7,8 +7,8 @@ const galleryImages = [];
 for (let i = 1; i <= 28; i++) {
   galleryImages.push({
     id: i,
-    thumb: `/images/gallery${i}.jpg`,
-    full: `/images/gallery${i}.jpg`,
+    thumb: `images/gallery${i}.jpg`,
+    full: `images/gallery${i}.jpg`,
     alt: `갤러리 이미지 ${i}`
   });
 }

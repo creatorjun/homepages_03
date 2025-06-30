@@ -17,7 +17,7 @@ function Hero() {
         </h1>
       </div>
       <img
-        src="/images/poll.webp"
+        src="images/poll.webp"
         alt="7호선 상도역, 서부선 신상도역 역세권"
         className="hero-poll-image"
       />

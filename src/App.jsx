@@ -32,7 +32,7 @@ function App() {
       {/* Open Graph (소셜 미디어 공유용) */}
       <meta property="og:title" content="상도 힐스 더원" />
       <meta property="og:description" content="동작의 마지막 6억원대, 10년 장기전세아파트" />
-      <meta property="og:image" content="/images/og_image.jpg" />
+      <meta property="og:image" content="images/og_image.jpg" />
       <meta property="og:url" content="https://YOUR_WEBSITE_URL" />
       <meta property="og:type" content="website" />
       {/* ======================================================= */}

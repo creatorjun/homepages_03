@@ -50,7 +50,7 @@ function Popup() {
       <div className="popup">
         <button className="popup-close" onClick={handleClose}>&times;</button>
         
-        <img src="/images/popup.webp" alt="팝업 안내" className="popup-image" />
+        <img src="images/popup.webp" alt="팝업 안내" className="popup-image" />
         
         <div className="popup-action">
           <a href="#contact" className="popup-button" onClick={handleClose}>

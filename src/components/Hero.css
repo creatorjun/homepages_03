@@ -2,7 +2,7 @@
 .hero-section {
   position: relative;
   height: 80vh;
-  background: url("/images/main_desktop.webp") no-repeat center center/cover;
+  background: url("../images/main_desktop.webp") no-repeat center center/cover;
   display: flex;
   justify-content: flex-start;
   text-align: left;
@@ -43,7 +43,7 @@
 
 @media (max-width: 1024px) {
   .hero-section {
-    background-image: url("/images/main_tab.webp");
+    background-image: url("../images/main_tab.webp");
   }
 
   .hero-text h1 {
@@ -63,7 +63,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url("/images/main_mobile.webp");
+    background-image: url("../images/main_mobile.webp");
     justify-content: center;
   }
 

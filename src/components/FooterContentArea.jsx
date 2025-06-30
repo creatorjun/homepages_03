@@ -5,7 +5,7 @@ function FooterContentArea() {
   return (
     <div className="footer-content-area">
       <div className="footer-logo">
-        <img src="/images/logo.webp" alt="하단 로고" />
+        <img src="images/logo.webp" alt="하단 로고" />
       </div>
       <div className="footer-info">
         <p><strong>상도 힐스 더원</strong></p>

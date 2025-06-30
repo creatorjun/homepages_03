@@ -62,7 +62,7 @@ function Premium() {
       </div>
 
       <img 
-        src="/images/premium.webp" 
+        src="images/premium.webp" 
         alt="상도 힐스 더원 프리미엄 조감도"
         className="premium-main-image"
         data-aos="fade-up"

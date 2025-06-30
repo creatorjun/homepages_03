@@ -4,21 +4,21 @@ import './Flats.css';
 const flatsData = [
   {
     id: 1,
-    imgSrc: "/images/flats_01.webp",
+    imgSrc: "images/flats_01.webp",
     altText: "A타입 평면도",
     type: "A-type",
     area: "전용 59㎡",
   },
   {
     id: 2,
-    imgSrc: "/images/flats_02.webp",
+    imgSrc: "images/flats_02.webp",
     altText: "B타입 평면도",
     type: "B-type",
     area: "전용 71㎡",
   },
   {
     id: 3,
-    imgSrc: "/images/flats_03.webp",
+    imgSrc: "images/flats_03.webp",
     altText: "C-type 평면도",
     type: "C-type",
     area: "전용 84㎡",
