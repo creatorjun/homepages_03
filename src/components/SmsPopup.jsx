@@ -34,8 +34,8 @@ function SmsPopup() {
     setSubmitMessage('');
 
     const formData = new FormData();
-    formData.append('message', message);
-    formData.append('phone', phone);
+    formData.append('Message', message);
+    formData.append('Mobile', phone);
 
     const phpApiUrl = 'send_message.php';
 
@@ -45,20 +45,21 @@ function SmsPopup() {
         body: formData,
       });
 
-      const result = await response.text();
+      // PHP에서 JSON 형식으로 응답을 보낼 것을 가정하고 .json()으로 파싱합니다.
+      const result = await response.json();
 
-      if (result.includes('SUCCESS')) {
-        setSubmitMessage('메세지가 성공적으로 전송되었습니다.');
+      // PHP 스크립트의 응답에 따라 메시지를 설정합니다.
+      setSubmitMessage(result.message);
+
+      if (result.success) {
         setMessage('');
         setPhone('');
         setTimeout(() => {
           setIsExpanded(false);
         }, 2000);
-      } else {
-        setSubmitMessage('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
       }
     } catch (error) {
-      setSubmitMessage('네트워크 오류가 발생했습니다. 확인 후 다시 시도해주세요.');
+      setSubmitMessage('네트워크 오류 또는 서버 응답에 문제가 발생했습니다. 확인 후 다시 시도해주세요.');
       console.error('Fetch Error:', error);
     } finally {
       setIsSubmitting(false);

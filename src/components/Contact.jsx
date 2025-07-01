@@ -37,10 +37,14 @@ function Contact() {
     setSubmitMessage('');
 
     const formData = new FormData();
-    formData.append('name', name);
-    formData.append('phone', phone);
-    // 방문 희망일 데이터 추가
-    formData.append('visitDate', visitDate.toLocaleDateString('ko-KR'));
+    // PHP에서 사용하는 Key값(Name, Mobile, AgreeYN 등)과 일치시킵니다.
+    formData.append('Name', name);
+    formData.append('Mobile', phone);
+    formData.append('Visit_Day', visitDate ? visitDate.toLocaleDateString('ko-KR') : '미지정');
+    // 현재 폼에서는 방문 시간을 받지 않으므로 '미지정'으로 보냅니다.
+    formData.append('Visit_Time', '미지정');
+    // 동의 여부 값을 'Y' 또는 'N'으로 명확하게 보냅니다.
+    formData.append('AgreeYN', agree ? 'Y' : 'N');
     
     const phpApiUrl = 'send_sms.php'; 
 
@@ -50,20 +54,21 @@ function Contact() {
         body: formData,
       });
 
-      const result = await response.text();
+      // PHP에서 JSON 형식으로 응답을 보내므로 .json()으로 파싱합니다.
+      const result = await response.json();
 
-      if (result.includes('SUCCESS')) {
-        setSubmitMessage('상담신청이 성공적으로 접수되었습니다.');
+      // PHP 스크립트의 응답에 따라 메시지를 설정합니다.
+      setSubmitMessage(result.message);
+
+      // 성공 시 입력 필드 초기화
+      if (result.success) {
         setName('');
         setPhone('');
-        setVisitDate(null); // 상태 초기화
+        setVisitDate(null);
         setAgree(false);
-      } else {
-        setSubmitMessage('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-        console.error('PHP Response:', result);
       }
     } catch (error) {
-      setSubmitMessage('네트워크 오류가 발생했습니다. 확인 후 다시 시도해주세요.');
+      setSubmitMessage('네트워크 오류 또는 서버 응답에 문제가 발생했습니다. 확인 후 다시 시도해주세요.');
       console.error('Fetch Error:', error);
     } finally {
       setIsSubmitting(false);
