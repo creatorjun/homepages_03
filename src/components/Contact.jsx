@@ -42,7 +42,7 @@ function Contact() {
     // 방문 희망일 데이터 추가
     formData.append('visitDate', visitDate.toLocaleDateString('ko-KR'));
     
-    const phpApiUrl = '/send_sms.php'; 
+    const phpApiUrl = 'send_sms.php'; 
 
     try {
       const response = await fetch(phpApiUrl, {

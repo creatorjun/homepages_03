@@ -14,6 +14,7 @@ import FooterContentArea from './components/FooterContentArea';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 import Popup from './components/Popup';
+import SmsPopup from './components/SmsPopup';
 
 function App() {
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
       <Footer />
       <FloatingButtons />
       <Popup />
+      <SmsPopup />
     </>
   );
 }
