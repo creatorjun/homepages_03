@@ -195,6 +195,19 @@
   gap: 15px;
 }
 
+.sms-form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.sms-form-group label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
 .sms-form-group textarea,
 .sms-form-group input {
   width: 100%;

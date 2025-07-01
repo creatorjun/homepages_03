@@ -92,6 +92,7 @@ function FloatingContainer({ onShowPopup }) {
             </div>
             <form onSubmit={handleSmsSubmit} className="sms-form-content">
               <div className="sms-form-group">
+                <label htmlFor="sms-message">문의내용</label>
                 <textarea
                   id="sms-message"
                   value={smsMessage}
@@ -101,6 +102,7 @@ function FloatingContainer({ onShowPopup }) {
                 />
               </div>
               <div className="sms-form-group">
+                <label htmlFor="sms-phone">연락처</label>
                 <input
                   type="tel"
                   id="sms-phone"
