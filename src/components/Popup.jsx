@@ -1,12 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Popup.css';
-
-// 쿠키 관련 헬퍼 함수
-const getCookie = (name) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-};
 
 const setCookie = (name, value, days) => {
   let expires = "";
@@ -18,26 +11,33 @@ const setCookie = (name, value, days) => {
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 };
 
-function Popup() {
-  const [isVisible, setIsVisible] = useState(false);
+function Popup({ isVisible, isClosing, onClose }) {
   const [dontShowToday, setDontShowToday] = useState(false);
 
-  useEffect(() => {
-    if (getCookie('popup_closed_today') !== 'true') {
-      setIsVisible(true);
-    }
-  }, []);
-
-  const handleClose = () => {
+  const handleCloseTrigger = useCallback(() => {
     if (dontShowToday) {
       setCookie('popup_closed_today', 'true', 1);
     }
-    setIsVisible(false);
-  };
+    onClose();
+  }, [dontShowToday, onClose]);
+  
+  useEffect(() => {
+    const onScroll = () => {
+      handleCloseTrigger();
+    };
+
+    if (isVisible && !isClosing) {
+      window.addEventListener('scroll', onScroll, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [isVisible, isClosing, handleCloseTrigger]);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-        handleClose();
+        handleCloseTrigger();
     }
   }
 
@@ -47,13 +47,17 @@ function Popup() {
 
   return (
     <div className="popup-overlay" onClick={handleOverlayClick}>
-      <div className="popup">
-        <button className="popup-close" onClick={handleClose}>&times;</button>
+      <div className={`popup ${isClosing ? 'closing' : ''}`}>
+        <button className="popup-close" onClick={handleCloseTrigger}>&times;</button>
         
         <img src="images/popup.webp" alt="팝업 안내" className="popup-image" />
         
         <div className="popup-action">
-          <a href="#contact" className="popup-button" onClick={handleClose}>
+          <a href="#contact" className="popup-button" onClick={(e) => {
+            e.preventDefault(); 
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+            handleCloseTrigger();
+          }}>
             상담신청 바로가기
           </a>
         </div>

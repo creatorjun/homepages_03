@@ -17,8 +17,36 @@
   padding: 0;
   border-radius: 20px;
   max-width: 450px;
+  width: 90%;
   text-align: center;
   overflow: hidden;
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.popup.closing {
+  animation: slideOutRight 0.5s ease-in forwards;
 }
 
 .popup-image {
@@ -69,4 +97,10 @@
   font-size: 0.9rem;
   text-align: right;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    max-width: 85%;
+  }
 }

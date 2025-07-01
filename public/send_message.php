@@ -1,14 +1,4 @@
 <?php
-
-// ===== 디버깅을 위한 에러 표시 코드 (문제 해결 후 삭제) =====
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// ===== 디버깅 코드 끝 =====
-
-// 파일명: send_message.php
-
-header('Content-Type: application/json; charset=UTF-8');
 // 파일명: send_message.php
 
 header('Content-Type: application/json; charset=UTF-8');
@@ -101,8 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $response_parts = explode("|", $munja_api_response_raw);
         $result_code = isset($response_parts[0]) ? trim($response_parts[0]) : "PARSE_ERR";
+        $result_msg = isset($response_parts[1]) ? trim($response_parts[1]) : "";
 
-        if ($result_code === "0000") {
+        // ===== 수정된 성공 조건 =====
+        if ($result_code === "0000" || strpos($result_msg, "성공") !== false) {
             $response_array["success"] = true;
             $response_array["message"] = "메세지가 성공적으로 전송되었습니다.";
         } else {
