@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import Popup from './components/Popup';
 import FloatingContainer from './components/FloatingContainer';
 
-import { siteContents } from './data/contents';
+import { siteContents } from './data/contents.jsx';
 
 const getCookie = (name) => {
   const value = `; ${document.cookie}`;
