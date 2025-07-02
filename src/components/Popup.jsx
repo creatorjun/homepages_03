@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Popup.css';
+import { siteContents } from '../data/contents';
 
 const setCookie = (name, value, days) => {
   let expires = "";
@@ -50,7 +51,7 @@ function Popup({ isVisible, isClosing, onClose }) {
       <div className={`popup ${isClosing ? 'closing' : ''}`}>
         <button className="popup-close" onClick={handleCloseTrigger}>&times;</button>
         
-        <img src="images/popup.webp" alt="팝업 안내" className="popup-image" />
+        <img src="images/popup.webp" alt={siteContents.popup.imageAlt} className="popup-image" />
         
         <div className="popup-action">
           <a href="#contact" className="popup-button" onClick={(e) => {
@@ -58,7 +59,7 @@ function Popup({ isVisible, isClosing, onClose }) {
             document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
             handleCloseTrigger();
           }}>
-            상담신청 바로가기
+            {siteContents.popup.buttonText}
           </a>
         </div>
         
@@ -69,7 +70,7 @@ function Popup({ isVisible, isClosing, onClose }) {
             checked={dontShowToday}
             onChange={(e) => setDontShowToday(e.target.checked)}
           />
-          <label htmlFor="popup-today-close">오늘 하루 보지 않기</label>
+          <label htmlFor="popup-today-close">{siteContents.popup.dontShowToday}</label>
         </div>
       </div>
     </div>

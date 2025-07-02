@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import './Gallery.css';
+import { siteContents } from '../data/contents';
+import SectionTitle from './SectionTitle';
 
 const galleryImages = [];
 for (let i = 1; i <= 28; i++) {
@@ -9,7 +11,7 @@ for (let i = 1; i <= 28; i++) {
     id: i,
     thumb: `images/gallery${i}.jpg`,
     full: `images/gallery${i}.jpg`,
-    alt: `갤러리 이미지 ${i}`
+    alt: `${siteContents.gallery.imageAltTemplate} ${i}`
   });
 }
 
@@ -22,10 +24,10 @@ function Gallery() {
 
   return (
     <section id="gallery" className="gallery">
-      <div className="section-title" data-aos="fade-up">
-        <h2>GALLERY</h2>
-        <p>상도 힐스 더원의 하이엔드 인테리어를 미리 만나보세요</p>
-      </div>
+      <SectionTitle
+        title={siteContents.gallery.title}
+        description={siteContents.gallery.description}
+      />
       
       <div className="gallery-grid" data-aos="fade-up" data-aos-delay="200">
         {galleryImages.map((image, idx) => (

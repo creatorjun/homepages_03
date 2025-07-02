@@ -1,24 +1,26 @@
 import React from 'react';
 import './Hero.css';
+import { siteContents } from '../data/contents';
 
 function Hero() {
   return (
     <section className="hero-section">
       <div className="hero-text">
-        <p className="sub-heading">
-          분양전환형 10년 장기전세아파트
-          <br />
-          동작의 마지막 6억원대
-        </p>
+        <p
+          className="sub-heading"
+          dangerouslySetInnerHTML={{ __html: siteContents.hero.subHeading }}
+        />
         <h1>
-          서울의 <span className="highlight">퍼스트</span>
+          {siteContents.hero.mainHeading[0]}
+          <span className="highlight">{siteContents.hero.mainHeading[1]}</span>
           <br />
-          동작의 <span className="highlight">라스트</span>
+          {siteContents.hero.mainHeading[2]}
+          <span className="highlight">{siteContents.hero.mainHeading[3]}</span>
         </h1>
       </div>
       <img
         src="images/poll.webp"
-        alt="7호선 상도역, 서부선 신상도역 역세권"
+        alt={siteContents.hero.pollImageAlt}
         className="hero-poll-image"
       />
     </section>
