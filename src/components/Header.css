@@ -59,6 +59,10 @@ header .menu a:hover {
     padding: 15px 20px;
   }
 
+  header .logo img {
+    height: 27px;
+  }
+
   .menu {
     display: none;
     position: absolute;
