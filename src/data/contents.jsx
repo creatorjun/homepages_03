@@ -6,7 +6,7 @@ export const siteContents = {
     description: "7호선 상도역, 서부선 신상도역 더블 역세권. 강남, 여의도, 용산 20분대 접근. 복층형 특화설계와 풀퍼니시드 시스템을 갖춘 상도 힐스 더원의 분양 정보를 확인하세요.",
     ogTitle: "상도 힐스 더원",
     ogDescription: "동작의 마지막 6억원대, 10년 장기전세아파트",
-    ogUrl: "https://YOUR_WEBSITE_URL",
+    ogUrl: "https://qtlab.shop/sample01/",
   },
   header: {
     logoAlt: "(대표) 상도 힐스 더원 로고",

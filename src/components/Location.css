@@ -87,12 +87,25 @@
   transition: opacity 0.4s ease-in-out;
 }
 
+/* 사용자가 직접 hover 했을 때 즉시 반응 */
 .location-item:hover .location-image {
   opacity: 0;
   transform: scale(1.1);
 }
 
 .location-item:hover .location-text-overlay {
+  opacity: 1;
+}
+
+/* AOS로 화면에 나타났을 때 1초 뒤에 반응 */
+.location-item[data-aos="location-flip"].aos-animate .location-image {
+  transition-delay: 1s;
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.location-item[data-aos="location-flip"].aos-animate .location-text-overlay {
+  transition-delay: 1s;
   opacity: 1;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Location.css';
-import { siteContents } from '../data/contents';
+import { siteContents } from '../data/contents.jsx';
 import SectionTitle from './SectionTitle';
 
 function Location() {
@@ -29,9 +29,14 @@ function Location() {
         </div>
       </div>
 
-      <div className="location-advantage-grid" data-aos="fade-up" data-aos-delay="300">
+      <div className="location-advantage-grid">
         {siteContents.location.advantages.map((item) => (
-          <div className="location-item" key={item.id}>
+          <div
+            className="location-item"
+            key={item.id}
+            data-aos="location-flip"
+            data-aos-once="false"
+          >
             <img src={`images/location_0${item.id}.webp`} alt={item.heading} className="location-image" />
             <div className="location-text-overlay">
               <span className="location-title">{item.title}</span>
