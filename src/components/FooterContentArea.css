@@ -1,7 +1,18 @@
-/* Footer Content Area */
+/* src/components/FooterContentArea.css */
+
 .footer-content-area {
   background-color: #f4f4f4;
   padding: 40px;
+  display: flex;
+  /* 아이템들을 세로로 쌓기 위해 flex-direction을 column으로 변경 */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* 메인 컨텐츠와 공지 텍스트 사이의 간격 */
+}
+
+/* 로고와 정보를 감싸는 컨테이너 */
+.footer-main-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +25,14 @@
 
 .footer-info {
   text-align: left;
+}
+
+/* 새로 추가된 공지 텍스트 스타일 */
+.footer-centered-notice {
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 @media (max-width: 768px) {
