@@ -1,0 +1,6 @@
+# 모든 검색 로봇에게 사이트의 모든 콘텐츠에 대한 접근을 허용합니다.
+User-agent: *
+Allow: /
+
+# 검색 로봇에게 사이트맵 파일의 위치를 알려줍니다.
+Sitemap: https://bunyang.store/sitemap.xml

@@ -121,6 +121,7 @@ export const siteContents = {
     logoAlt: "하단 로고",
     siteName: "상도 힐스 더원",
     address: "서울시 동작구 상도동 154-8",
+    agencyInfo: "관리자 : 태양기획  |  문의 : 1666-8682"
   },
   footer: {
     notice1: "※ 본 홈페이지에 사용된 CG, 이미지 및 내용은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.",

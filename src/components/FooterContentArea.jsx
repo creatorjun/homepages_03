@@ -11,6 +11,7 @@ function FooterContentArea() {
       <div className="footer-info">
         <p><strong>{siteContents.footerContent.siteName}</strong></p>
         <p>{siteContents.footerContent.address}</p>
+        <p>{siteContents.footerContent.agencyInfo}</p>
       </div>
     </div>
   );
