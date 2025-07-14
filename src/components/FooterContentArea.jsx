@@ -5,9 +5,11 @@ import './FooterContentArea.css';
 import { siteContents } from '../data/contents';
 
 function FooterContentArea() {
+  const noticeItems = siteContents.footerContent.centeredNotice.split('|').map(item => item.trim());
+  const agencyInfoItems = siteContents.footerContent.agencyInfo.split('|').map(item => item.trim());
+
   return (
     <div className="footer-content-area">
-      {/* 1. 기존 로고와 정보를 묶어주는 div를 추가합니다. */}
       <div className="footer-main-content">
         <div className="footer-logo">
           <img src="images/logo.webp" alt={siteContents.footerContent.logoAlt} />
@@ -15,13 +17,17 @@ function FooterContentArea() {
         <div className="footer-info">
           <p><strong>{siteContents.footerContent.siteName}</strong></p>
           <p>{siteContents.footerContent.address}</p>
-          {/* 2. agencyInfo를 다시 원래대로 표시합니다. */}
-          <p>{siteContents.footerContent.agencyInfo}</p>
+          <p className="footer-split-text">
+            {agencyInfoItems.map((item, index) => (
+              <span key={index} className="split-item">{item}</span>
+            ))}
+          </p>
         </div>
       </div>
-      {/* 3. 새로 추가한 텍스트를 별도의 p 태그로 표시합니다. */}
-      <p className="footer-centered-notice">
-        {siteContents.footerContent.centeredNotice}
+      <p className="footer-split-text footer-centered-notice">
+        {noticeItems.map((item, index) => (
+          <span key={index} className="split-item">{item}</span>
+        ))}
       </p>
     </div>
   );
