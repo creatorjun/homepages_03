@@ -1,3 +1,5 @@
+// src/components/Gallery.jsx
+
 import React, { useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -5,15 +7,15 @@ import './Gallery.css';
 import { siteContents } from '../data/contents';
 import SectionTitle from './SectionTitle';
 
-const galleryImages = [];
-for (let i = 1; i <= 28; i++) {
-  galleryImages.push({
-    id: i,
-    thumb: `images/gallery${i}.jpg`,
-    full: `images/gallery${i}.jpg`,
-    alt: `${siteContents.gallery.imageAltTemplate} ${i}`
-  });
-}
+// 갤러리 대표 이미지 하나만 사용하도록 수정합니다.
+const galleryImages = [
+  {
+    id: 1,
+    thumb: `images/gallery-1.webp`,
+    full: `images/gallery-1.webp`,
+    alt: `${siteContents.gallery.imageAltTemplate} 1`
+  }
+];
 
 const slides = galleryImages.map(item => ({
   src: item.full,

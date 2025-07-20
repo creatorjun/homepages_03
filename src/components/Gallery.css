@@ -1,10 +1,14 @@
+/* src/components/Gallery.css */
+
 /* Gallery Section */
 .gallery {
   background-color: #f9f9f9;
 }
+
+/* 단일 이미지를 중앙에 배치하도록 수정 */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 10px;
   max-width: 1200px;
   margin: 0 auto;
@@ -13,6 +17,9 @@
 .gallery-item {
   overflow: hidden;
   border-radius: 8px;
+  /* 단일 갤러리 아이템의 최대 너비를 설정합니다. */
+  max-width: 800px;
+  width: 100%;
 }
 
 .gallery-item img {
@@ -24,10 +31,4 @@
 
 .gallery-item:hover img {
   transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }

@@ -1,4 +1,7 @@
+// src/components/Header.jsx
+
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Link 임포트
 import './Header.css';
 import { siteContents } from '../data/contents';
 
@@ -16,17 +19,19 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <a href="#">
+        {/* 로고 클릭 시 홈으로 이동하도록 Link 컴포넌트 사용 */}
+        <Link to="/" onClick={handleLinkClick}>
           <img src="images/logo.webp" alt={siteContents.header.logoAlt} />
-        </a>
+        </Link>
       </div>
       <nav className={isMenuOpen ? 'menu active' : 'menu'}>
         <ul>
           {siteContents.header.navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} onClick={handleLinkClick}>
+              {/* a 태그를 Link 컴포넌트로 변경 */}
+              <Link to={link.href} onClick={handleLinkClick}>
                 {link.text}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

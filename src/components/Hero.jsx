@@ -1,3 +1,5 @@
+// src/components/Hero.jsx
+
 import React from 'react';
 import './Hero.css';
 import { siteContents } from '../data/contents';
@@ -18,11 +20,7 @@ function Hero() {
           <span className="highlight">{siteContents.hero.mainHeading[3]}</span>
         </h1>
       </div>
-      <img
-        src="images/poll.webp"
-        alt={siteContents.hero.pollImageAlt}
-        className="hero-poll-image"
-      />
+      {/* hero-poll-image를 제거했습니다. */}
     </section>
   );
 }

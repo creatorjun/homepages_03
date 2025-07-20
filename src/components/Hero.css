@@ -1,8 +1,12 @@
+/* src/components/Hero.css */
+
 /* Hero Section */
 .hero-section {
   position: relative;
   height: 80vh;
-  background: url("../images/main_desktop.webp") no-repeat center center/cover;
+  /* 단일 배경 이미지로 변경 */
+  background: url('../images/Hero.webp') no-repeat center center/cover;
+  background-position: center bottom;
   display: flex;
   justify-content: flex-start;
   text-align: left;
@@ -32,20 +36,10 @@
   color: #FFD700;
 }
 
-.hero-poll-image {
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  width: auto;
-  max-width: 200px;
-  height: auto;
-}
+/* hero-poll-image 관련 스타일을 제거했습니다. */
 
 @media (max-width: 1024px) {
-  .hero-section {
-    background-image: url("../images/main_tab.webp");
-  }
-
+  /* 반응형 배경 이미지 설정 제거 */
   .hero-text h1 {
     font-size: 3.8rem;
   }
@@ -54,16 +48,13 @@
     font-size: 1.5rem;
     padding-top: 50px;
   }
-
-  .hero-poll-image {
-    max-width: 200px;
-    left: 2%;
-  }
+  
+  /* hero-poll-image 관련 스타일을 제거했습니다. */
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url("../images/main_mobile.webp");
+    /* 반응형 배경 이미지 설정 제거 및 정렬 변경 */
     justify-content: center;
   }
 
@@ -78,10 +69,5 @@
   .hero-text .sub-heading {
     font-size: 1.3rem;
     padding-top: 50px;
-  }
-
-  .hero-poll-image {
-    max-width: 150px;
-    left: 2%;
   }
 }

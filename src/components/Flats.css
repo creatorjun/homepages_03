@@ -1,8 +1,10 @@
+/* src/components/Flats.css */
+
 /* Flats Section */
 .flats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  /* 단일 항목을 중앙에 배치하기 위해 flexbox로 변경 */
+  display: flex;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -12,6 +14,8 @@
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 380px;
 }
 
 .flat-item:hover {

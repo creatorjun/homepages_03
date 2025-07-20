@@ -1,3 +1,5 @@
+/* src/components/Location.css */
+
 .location {
   background-color: #f9f9f9;
 }
@@ -47,10 +49,10 @@
   color: #FFD700;
 }
 
+/* 단일 항목을 중앙에 배치하도록 수정 */
 .location-advantage-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  display: flex;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -61,6 +63,9 @@
   border-radius: 10px;
   aspect-ratio: 16 / 10;
   cursor: pointer;
+  /* 단일 항목의 최대 너비 설정 */
+  width: 100%;
+  max-width: 592px; /* (1200 - 15) / 2 와 유사한 크기 */
 }
 
 .location-image {
@@ -132,9 +137,7 @@
     margin-bottom: 60px;
   }
 
-  .location-advantage-grid {
-    grid-template-columns: 1fr;
-  }
+  /* 불필요한 그리드 설정 제거 */
   
   .location-text-overlay h3 {
     font-size: 1.5rem;

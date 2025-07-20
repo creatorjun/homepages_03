@@ -1,4 +1,7 @@
+// src/components/FloatingContainer.jsx
+
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaCommentDots, FaBell } from 'react-icons/fa';
 import './FloatingContainer.css';
 import { siteContents } from '../data/contents';
@@ -22,10 +25,6 @@ function FloatingContainer({ onShowPopup }) {
   const handleSmsSubmit = async (event) => {
     event.preventDefault();
 
-    if (!smsMessage.trim()) {
-      alert(siteContents.floating.sms.alerts.messageRequired);
-      return;
-    }
     if (!smsPhone.trim()) {
       alert(siteContents.floating.sms.alerts.phoneRequired);
       return;
@@ -35,7 +34,8 @@ function FloatingContainer({ onShowPopup }) {
     setSmsSubmitMessage('');
 
     const formData = new FormData();
-    formData.append('Message', smsMessage);
+    const messageToSend = smsMessage.trim() ? smsMessage : "성수 드림빌드 문의합니다.";
+    formData.append('Message', messageToSend);
     formData.append('Mobile', smsPhone);
 
     const phpApiUrl = 'send_message.php';
@@ -74,9 +74,9 @@ function FloatingContainer({ onShowPopup }) {
           </span>
         </a>
         <div className="bottom-button-row">
-          <a href="#contact" className="floating-call-button reservation">
+          <Link to="/contact" className="floating-call-button reservation">
             <span>{siteContents.floating.reservation}</span>
-          </a>
+          </Link>
           <button className="floating-call-button popup-show" onClick={onShowPopup}>
             <FaBell />
             <span>{siteContents.floating.showPopup}</span>
@@ -98,7 +98,8 @@ function FloatingContainer({ onShowPopup }) {
                   id="sms-message"
                   value={smsMessage}
                   onChange={(e) => setSmsMessage(e.target.value)}
-                  placeholder={siteContents.floating.sms.messagePlaceholder}
+                  // placeholder에 기본 메시지를 추가합니다.
+                  placeholder="성수 드림빌드 문의합니다."
                   disabled={isSmsSubmitting}
                 />
               </div>

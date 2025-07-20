@@ -1,3 +1,5 @@
+// src/components/Contact.jsx
+
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -42,6 +44,8 @@ function Contact() {
     formData.append('Visit_Day', visitDate ? visitDate.toLocaleDateString('ko-KR') : '미지정');
     formData.append('Visit_Time', '미지정');
     formData.append('AgreeYN', agree ? 'Y' : 'N');
+    // 기본 문의 내용을 함께 전송합니다.
+    formData.append('Inquiry', '성수 드림빌드 문의합니다.');
     
     const phpApiUrl = 'send_sms.php'; 
 
