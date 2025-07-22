@@ -11,8 +11,14 @@ import SectionTitle from './SectionTitle';
 const galleryImages = [
   {
     id: 1,
-    thumb: `images/gallery-1.webp`,
-    full: `images/gallery-1.webp`,
+    thumb: `images/gallery-1.jpg`,
+    full: `images/gallery-1.jpg`,
+    alt: `${siteContents.gallery.imageAltTemplate} 1`
+  },
+  {
+    id: 2,
+    thumb: `images/gallery-2.jpg`,
+    full: `images/gallery-2.jpg`,
     alt: `${siteContents.gallery.imageAltTemplate} 1`
   }
 ];

@@ -56,11 +56,14 @@
 @media (max-width: 768px) {
   .hero-section {
     /* 반응형 배경 이미지 설정 제거 및 정렬 변경 */
-    justify-content: center;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-end;   /* 세로 하단 정렬 */
+    padding-bottom: 5%;      /* 아래에서 5% 띄우기 */
   }
 
   .hero-text {
     text-align: center;
+    padding-bottom: 0; /* 기존 하단 여백과 충돌하지 않도록 초기화 */
   }
 
   .hero-text h1 {
