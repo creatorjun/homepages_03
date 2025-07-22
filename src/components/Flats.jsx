@@ -37,9 +37,16 @@ function Flats() {
             </div>
             <div className="flat-info">
               <h4>{flat.type}</h4>
-              {/* area 배열을 map으로 순회하여 p태그로 렌더링 */}
+              {/* area 배열을 map으로 순회하며 | 기준으로 줄바꿈 처리 */}
               {flat.area.map((line, lineIndex) => (
-                <p key={lineIndex}>{line}</p>
+                <p key={lineIndex}>
+                  {line.split('|').map((text, textIndex, arr) => (
+                    <React.Fragment key={textIndex}>
+                      {text.trim()}
+                      {textIndex < arr.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
               ))}
             </div>
           </div>
