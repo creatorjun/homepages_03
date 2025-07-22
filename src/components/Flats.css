@@ -2,9 +2,12 @@
 
 /* Flats Section */
 .flats-grid {
-  /* 단일 항목을 중앙에 배치하기 위해 flexbox로 변경 */
-  display: flex;
-  justify-content: center;
+  /* flex에서 grid로 변경 */
+  display: grid;
+  /* 데스크탑에서는 2열로 표시 */
+  grid-template-columns: repeat(2, 1fr);
+  /* 아이템 사이의 여백 추가 */
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -14,8 +17,8 @@
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  /* width와 max-width는 grid 시스템에 의해 제어되므로 제거하거나 100%로 설정 */
   width: 100%;
-  max-width: 380px;
 }
 
 .flat-item:hover {
@@ -23,11 +26,33 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* 두 이미지를 감싸는 컨테이너 */
+.flat-image-container {
+  display: flex;
+  gap: 0; /* 이미지 사이의 간격을 없앰 */
+}
+
+.flat-image-container img {
+  width: 50%; /* 각 이미지의 너비를 50%로 설정 */
+  height: auto;
+  /* 클릭 가능하도록 커서 모양 변경 */
+  cursor: pointer;
+}
+
 .flat-info {
   padding: 20px;
   background-color: #fff;
+  text-align: center; /* 텍스트를 중앙 정렬 */
 }
 
 .flat-info h4 {
   font-size: 1.3rem;
+}
+
+/* 모바일 화면을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .flats-grid {
+    /* 모바일에서는 1열로 변경 */
+    grid-template-columns: 1fr;
+  }
 }

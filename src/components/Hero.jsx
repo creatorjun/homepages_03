@@ -14,10 +14,8 @@ function Hero() {
         />
         <h1>
           {siteContents.hero.mainHeading[0]}
-          <span className="highlight">{siteContents.hero.mainHeading[1]}</span>
           <br />
-          {siteContents.hero.mainHeading[2]}
-          <span className="highlight">{siteContents.hero.mainHeading[3]}</span>
+          <span className="highlight">{siteContents.hero.mainHeading[1]}</span>
         </h1>
       </div>
       {/* hero-poll-image를 제거했습니다. */}
